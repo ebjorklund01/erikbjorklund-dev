@@ -1,36 +1,76 @@
 import AnimateIn from "./AnimateIn";
 
+interface Skill {
+  name: string;
+  exploring?: boolean;
+}
+
 interface SkillGroup {
   category: string;
-  skills: string[];
+  skills: Skill[];
   learning?: boolean;
 }
 
 const groups: SkillGroup[] = [
   {
     category: "Languages",
-    skills: ["Python", "JavaScript", "TypeScript", "Ruby", "Dart", "SQL"],
+    skills: [
+      { name: "Python" },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "Ruby" },
+      { name: "Dart" },
+      { name: "SQL" },
+      { name: "LookML" },
+      { name: "C" },
+    ],
   },
   {
     category: "AI & LLMs",
-    skills: ["OpenAI API", "LLM Integration", "Pydantic", "Firecrawl", "LangChain"],
+    skills: [
+      { name: "OpenAI API" },
+      { name: "Pydantic" },
+      { name: "Firecrawl" },
+      { name: "LangChain", exploring: true },
+      { name: "LangGraph", exploring: true },
+    ],
   },
   {
     category: "Backend & Data",
-    skills: ["Ruby on Rails", "GraphQL", "PostgreSQL", "REST APIs"],
+    skills: [
+      { name: "Ruby on Rails" },
+      { name: "GraphQL" },
+      { name: "PostgreSQL" },
+      { name: "REST APIs" },
+      { name: "Stripe" },
+    ],
   },
   {
     category: "Frontend & Mobile",
-    skills: ["React", "Next.js", "Flutter", "Native Android", "Tailwind CSS"],
+    skills: [
+      { name: "React" },
+      { name: "Next.js", exploring: true },
+      { name: "Flutter" },
+      { name: "Native Android" },
+      { name: "Tailwind CSS", exploring: true },
+    ],
   },
   {
     category: "ML / Traditional",
-    skills: ["PyTorch", "scikit-learn", "Hugging Face"],
-    learning: true,
+    skills: [
+      { name: "PyTorch", exploring: true },
+      { name: "scikit-learn", exploring: true },
+    ],
   },
   {
     category: "Tools & Analytics",
-    skills: ["Git", "Docker", "Cursor", "Looker", "Amplitude", "Firebase"],
+    skills: [
+      { name: "Git" },
+      { name: "Docker" },
+      { name: "Cursor" },
+      { name: "Looker" },
+      { name: "Amplitude" },
+    ],
   },
 ];
 
@@ -42,7 +82,17 @@ export default function Skills() {
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-stone-900 mb-2">
             Skills &amp; Stack
           </h2>
-          <span className="block mb-16 w-8 h-px bg-accent" />
+          <span className="block mt-4 mb-6 w-8 h-px bg-accent" />
+          <div className="flex items-center gap-6 mb-16">
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-white border border-stone-200 inline-block" />
+              <span className="text-xs text-stone-400">Proficient</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-accent/10 border border-accent/20 inline-block" />
+              <span className="text-xs text-stone-400">Exploring</span>
+            </div>
+          </div>
         </AnimateIn>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -62,14 +112,14 @@ export default function Skills() {
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <span
-                      key={skill}
+                      key={skill.name}
                       className={`px-3 py-1.5 rounded-full text-sm ${
-                        group.learning
+                        group.learning || skill.exploring
                           ? "bg-accent/10 text-accent border border-accent/20"
                           : "bg-white text-stone-700 border border-stone-200"
                       }`}
                     >
-                      {skill}
+                      {skill.name}
                     </span>
                   ))}
                 </div>
