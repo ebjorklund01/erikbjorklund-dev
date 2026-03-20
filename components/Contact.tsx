@@ -45,7 +45,7 @@ export default function Contact() {
 
         <AnimateIn delay={0.1}>
           <a
-            href="/Erik-Bjorklund.pdf"
+            href="/Erik-Bjorklund-Full-Stack-Engineer.pdf"
             download
             className="inline-flex items-center gap-2 px-5 py-3 mb-10 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent/90 transition-colors"
           >

@@ -67,6 +67,8 @@ const groups: SkillGroup[] = [
     skills: [
       { name: "Git" },
       { name: "Docker" },
+      { name: "AWS" },
+      { name: "CircleCI" },
       { name: "Cursor" },
       { name: "Looker" },
       { name: "Amplitude" },
