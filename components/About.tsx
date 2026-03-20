@@ -57,8 +57,9 @@ export default function About() {
               team grounded in real product data. Recently, I developed a
               production AI pipeline using Firecrawl, Pydantic, and the OpenAI
               API to scrape partner job sites into structured data, then
-              uploaded to Salesforce. That project crystallized where I want to
-              go next: building production-grade agentic and AI systems.
+              uploaded to Salesforce. That project crystallized where I&rsquo;m most excited
+              to go next: building production-grade AI systems, while continuing
+              to grow as a full-stack engineer.
             </p>
           </AnimateIn>
 
