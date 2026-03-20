@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Download } from "lucide-react";
 import AnimateIn from "./AnimateIn";
 
 const links = [
@@ -41,6 +41,17 @@ export default function Contact() {
             I&rsquo;m always open to conversations about AI, engineering, and
             new opportunities.
           </p>
+        </AnimateIn>
+
+        <AnimateIn delay={0.1}>
+          <a
+            href="/Erik-Bjorklund.pdf"
+            download
+            className="inline-flex items-center gap-2 px-5 py-3 mb-10 rounded-xl bg-accent text-white text-sm font-medium hover:bg-accent/90 transition-colors"
+          >
+            <Download size={16} />
+            Download Resume
+          </a>
         </AnimateIn>
 
         <div className="grid sm:grid-cols-2 gap-4 max-w-xl">
